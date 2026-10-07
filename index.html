@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ovia — Pure Drinking Water</title>
+  <meta name="description" content="Ovia is a premium packaged drinking water brand designed for homes, offices, retailers and distributors." />
+  <meta name="theme-color" content="#071B33" />
+  <meta property="og:title" content="Ovia — Pure Drinking Water" />
+  <meta property="og:description" content="Clean, dependable hydration for everyday life." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oviapurelife.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --navy:#071B33;
+      --navy-2:#0D2949;
+      --aqua:#6FE4F2;
+      --cyan:#2EBFD3;
+      --ice:#EAFBFD;
+      --white:#FFFFFF;
+      --ink:#102A43;
+      --muted:#5E7388;
+      --line:rgba(16,42,67,.12);
+      --shadow:0 24px 70px rgba(6,31,58,.15);
+      --radius-lg:28px;
+      --radius-md:20px;
+      --radius-sm:14px;
+      --container:1180px;
+      --header-h:78px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button,a{cursor:pointer}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(46,191,211,.55);outline-offset:3px}
+    .container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+    .section{padding:112px 0;position:relative}
+    .section--soft{background:var(--ice)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800;color:#2C6F83}
+    .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+    .display{font-family:Sora,system-ui,sans-serif;font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.045em;margin:20px 0 22px;font-weight:700}
+    .section-title{font-family:Sora,system-ui,sans-serif;font-size:clamp(34px,4.4vw,54px);line-height:1.05;letter-spacing:-.04em;margin:14px 0 18px}
+    .lead{color:var(--muted);font-size:17px;max-width:650px}
+    .skip{position:fixed;left:16px;top:16px;z-index:1000;padding:10px 14px;background:#fff;border-radius:10px;transform:translateY(-150%)}
+    .skip:focus{transform:none}
+
+    header{position:sticky;top:0;z-index:50;height:var(--header-h);backdrop-filter:blur(16px);background:rgba(255,255,255,.88);border-bottom:1px solid rgba(16,42,67,.08)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.03em}
+    .brand-mark{width:36px;height:36px;display:block}
+    .brand-name{font-family:Sora;font-size:20px}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:700;color:#36516A}
+    .nav-links a{position:relative}
+    .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:999px;background:var(--navy);color:white;font-weight:800;font-size:12px;box-shadow:0 8px 26px rgba(7,27,51,.16)}
+    .menu-toggle{display:none;border:0;background:transparent;padding:8px}
+    .mobile-menu{display:none}
+
+    .hero{min-height:calc(100vh - var(--header-h));display:grid;align-items:center;background:radial-gradient(circle at 78% 42%,rgba(111,228,242,.18),transparent 32%),linear-gradient(180deg,#fff 0%,#f5fcfe 100%);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;padding:70px 0 86px}
+    .hero-copy .lead{font-size:18px;max-width:620px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 20px;font-weight:800;font-size:13px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--navy);color:white;box-shadow:0 14px 34px rgba(7,27,51,.2)}
+    .btn-secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;color:#527083;font-size:12px;font-weight:700}
+    .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(46,191,211,.12)}
+
+    .water-stage{min-height:580px;position:relative;display:grid;place-items:center}
+    .water-glow{position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(111,228,242,.40) 0%,rgba(111,228,242,.08) 46%,transparent 72%);filter:blur(3px);animation:glowPulse 6s ease-in-out infinite}
+    .ripples{position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid rgba(46,191,211,.18);animation:ripple 5.5s ease-out infinite}
+    .ripples::before,.ripples::after{content:"";position:absolute;inset:54px;border-radius:50%;border:1px solid rgba(46,191,211,.13)}
+    .ripples::after{inset:110px}
+    .bottle-wrap{position:relative;width:250px;animation:floatBottle 5.2s ease-in-out infinite}
+    .bottle-shadow{position:absolute;bottom:-18px;left:30px;right:30px;height:26px;background:rgba(17,78,101,.16);filter:blur(15px);border-radius:50%}
+    .bottle{position:relative;height:468px;border-radius:46px 46px 34px 34px;background:linear-gradient(90deg,#E5FAFD 0%,#fff 28%,#D5F7FB 68%,#C3EEF5 100%);border:1px solid rgba(16,42,67,.12);box-shadow:0 36px 80px rgba(7,27,51,.18),inset 0 0 0 8px rgba(255,255,255,.42),inset -18px -10px 26px rgba(38,139,160,.12);overflow:hidden}
+    .bottle::before{content:"";position:absolute;top:26px;left:22px;right:22px;height:90px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.18));opacity:.8}
+    .bottle-cap{position:absolute;top:-38px;left:50%;transform:translateX(-50%);width:78px;height:92px;border-radius:12px 12px 22px 22px;background:linear-gradient(90deg,#0F3B61,#1C6C90 48%,#0C3454);box-shadow:0 12px 24px rgba(7,27,51,.2)}
+    .bottle-label{position:absolute;left:22px;right:22px;top:166px;height:176px;border-radius:24px;background:linear-gradient(160deg,#071B33 0%,#0B3758 56%,#116079 100%);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 15px 36px rgba(7,27,51,.22)}
+    .bottle-label::after{content:"";position:absolute;width:180px;height:70px;bottom:-14px;left:28px;border-radius:50%;background:radial-gradient(ellipse,rgba(111,228,242,.5),transparent 68%)}
+    .mini-logo{width:48px;height:48px;margin-bottom:10px}
+    .bottle-label strong{font-family:Sora;font-size:31px;letter-spacing:-.06em;position:relative;z-index:1}
+    .bottle-label small{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#B7F4F8;font-weight:800;position:relative;z-index:1;margin-top:6px}
+    .bottle-spark{position:absolute;top:70px;right:44px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 26px rgba(255,255,255,.9);animation:spark 3.2s ease-in-out infinite}
+    .hero-ring{position:absolute;width:70px;height:70px;border-radius:50%;right:2%;top:24%;background:rgba(255,255,255,.72);border:1px solid rgba(46,191,211,.2);backdrop-filter:blur(10px);display:grid;place-items:center;animation:floatSmall 4.8s ease-in-out infinite}
+
+    .wave-divider{position:absolute;left:0;right:0;bottom:-1px;line-height:0;overflow:hidden}
+    .wave-divider svg{width:100%;height:78px;display:block}
+
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:62px;align-items:start}
+    .story-card{padding:30px;border-radius:24px;background:white;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .story-card h3{font-family:Sora;font-size:24px;margin:0 0 10px}
+    .story-card p{color:var(--muted);font-size:14px;margin:0}
+    .story-points{display:grid;gap:16px;margin-top:28px}
+    .point{display:grid;grid-template-columns:42px 1fr;gap:15px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}
+    .point:last-child{border-bottom:0}
+    .point-icon{width:42px;height:42px;border-radius:14px;background:var(--ice);display:grid;place-items:center;color:#16738A}
+    .point h4{font-size:14px;margin:0 0 4px}
+    .point p{font-size:13px;margin:0;color:var(--muted)}
+
+    .product-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:38px}
+    .product-head .lead{max-width:520px}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product-card{position:relative;padding:24px;border-radius:24px;background:linear-gradient(180deg,#fff,#F7FCFD);border:1px solid var(--line);box-shadow:0 16px 44px rgba(7,27,51,.07);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 26px 58px rgba(7,27,51,.12)}
+    .product-visual{height:250px;border-radius:20px;background:linear-gradient(145deg,#ECFCFE,#DAF7FB);display:grid;place-items:center;position:relative;overflow:hidden}
+    .product-visual::after{content:"";position:absolute;inset:auto -30% -42% -30%;height:170px;background:rgba(46,191,211,.18);border-radius:50%;filter:blur(4px)}
+    .small-bottle{height:188px;width:88px;border-radius:20px 20px 14px 14px;background:linear-gradient(90deg,#e3fbfe,#fff 32%,#cff3f8);border:1px solid rgba(16,42,67,.12);box-shadow:0 20px 34px rgba(8,71,91,.13);position:relative}
+    .small-bottle::before{content:"";position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:28px;height:34px;border-radius:6px 6px 10px 10px;background:#0D3A5E}
+    .small-label{position:absolute;top:70px;left:8px;right:8px;height:58px;border-radius:10px;background:var(--navy);color:white;display:grid;place-items:center;font-family:Sora;font-size:13px}
+    .large-bottle{height:210px;width:106px}
+    .jug{height:188px;width:126px;border-radius:22px 22px 24px 24px;background:linear-gradient(90deg,#d8f7fb,#fff 36%,#cbeef4);border:1px solid rgba(16,42,67,.12);box-shadow:0 20px 34px rgba(8,71,91,.13);position:relative}
+    .jug::before{content:"";position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:42px;height:34px;border-radius:7px;background:#0D3A5E}
+    .jug-label{position:absolute;left:10px;right:10px;top:62px;height:70px;border-radius:12px;background:var(--navy);display:grid;place-items:center;color:#fff;font-family:Sora;font-size:16px}
+    .product-size{margin-top:20px;color:#16738A;font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .product-card h3{font-family:Sora;font-size:25px;letter-spacing:-.04em;margin:7px 0 8px}
+    .product-card p{color:var(--muted);font-size:13px;margin:0 0 18px}
+    .product-link{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:12px;color:#125A72}
+
+    .process{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;align-items:start}
+    .process-intro{position:sticky;top:120px}
+    .process-list{display:grid;gap:2px}
+    .process-step{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+    .process-step:first-child{border-top:0}
+    .step-no{width:44px;height:44px;border-radius:50%;background:var(--navy);color:white;display:grid;place-items:center;font-family:Sora;font-size:12px}
+    .process-step h3{margin:0 0 5px;font-family:Sora;font-size:18px}
+    .process-step p{margin:0;color:var(--muted);font-size:13px}
+    .process-note{margin-top:28px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line);font-size:12px;color:#607689}
+
+    .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .quote-card{padding:30px;border-radius:26px;background:var(--navy);color:white;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}
+    .quote-card p{font-family:Sora;font-size:20px;line-height:1.4;letter-spacing:-.02em;margin:0}
+    .quote-meta{font-size:11px;color:#A8D8E1;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+    .trust-list{display:grid;gap:14px}
+    .trust-item{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;display:flex;align-items:center;gap:16px}
+    .trust-item strong{font-size:14px}
+    .trust-item span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+    .trust-icon{width:42px;height:42px;border-radius:14px;background:var(--ice);display:grid;place-items:center;color:#16738A;flex:none}
+    .trust-disclaimer{margin-top:18px;color:#728697;font-size:11px}
+
+    .distributor{border-radius:32px;background:linear-gradient(130deg,var(--navy),#0A4264 64%,#147A8E);color:white;padding:54px;position:relative;overflow:hidden}
+    .distributor::after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-200px;border-radius:50%;border:1px solid rgba(255,255,255,.16);box-shadow:0 0 0 70px rgba(255,255,255,.03),0 0 0 140px rgba(255,255,255,.02)}
+    .distributor-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:2}
+    .distributor .eyebrow{color:#A6EDF3}
+    .distributor h2{font-family:Sora;font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-.045em;margin:16px 0}
+    .distributor p{color:#C9E7EC;max-width:650px}
+    .contact-chip{display:grid;gap:10px;padding:24px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.05);backdrop-filter:blur(10px)}
+    .contact-chip strong{font-family:Sora;font-size:17px}
+    .contact-chip span{color:#BBDDE3;font-size:12px}
+
+    .contact-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:50px}
+    .contact-panel{padding:30px;border-radius:26px;background:var(--ice);border:1px solid rgba(16,42,67,.08)}
+    .contact-panel h3{font-family:Sora;font-size:27px;margin:0 0 10px}
+    .contact-panel p{color:var(--muted);font-size:13px}
+    .contact-details{display:grid;gap:12px;margin-top:25px}
+    .detail{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(16,42,67,.09)}
+    .detail:last-child{border-bottom:0}
+    .detail-icon{width:36px;height:36px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#16738A;flex:none}
+    .detail strong{display:block;font-size:12px;margin-bottom:2px}
+    .detail span{font-size:12px;color:var(--muted)}
+    form{display:grid;gap:14px}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:11px;font-weight:800;display:block;margin:0 0 7px;color:#496276}
+    input,textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px;color:var(--ink)}
+    textarea{min-height:140px;resize:vertical}
+    .form-note{font-size:11px;color:#6F8190;margin:0}
+    .form-status{display:none;padding:12px 14px;border-radius:12px;background:#EAFBFD;color:#1D6477;font-size:12px;font-weight:800}
+    .form-status.show{display:block}
+    .form-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+    footer{background:#041321;color:#D4E5EB;padding:52px 0 30px}
+    .footer-top{display:flex;justify-content:space-between;gap:30px;align-items:start}
+    .footer-brand{max-width:340px}
+    .footer-brand .brand{color:white}
+    .footer-brand p{font-size:12px;color:#89A4B0;margin:15px 0 0}
+    .footer-links{display:flex;gap:48px}
+    .footer-col{display:grid;gap:10px;font-size:12px}
+    .footer-col strong{color:white;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .footer-col a{color:#89A4B0}
+    .footer-col a:hover{color:white}
+    .footer-bottom{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#708B98}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.in{opacity:1;transform:none}
+    .page-loader{position:fixed;inset:0;z-index:200;background:var(--navy);display:grid;place-items:center;transition:opacity .6s ease,visibility .6s ease}
+    .page-loader.hide{opacity:0;visibility:hidden}
+    .loader-mark{width:70px;height:70px;animation:loaderFloat 1.8s ease-in-out infinite}
+
+    @keyframes floatBottle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+    @keyframes floatSmall{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes glowPulse{0%,100%{transform:scale(.96);opacity:.72}50%{transform:scale(1.04);opacity:1}}
+    @keyframes ripple{0%{transform:scale(.83);opacity:.05}20%{opacity:.8}100%{transform:scale(1.08);opacity:0}}
+    @keyframes spark{0%,100%{transform:translateY(0) scale(.8);opacity:.4}50%{transform:translateY(-10px) scale(1);opacity:1}}
+    @keyframes loaderFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(3deg)}}
+
+    @media (max-width:980px){
+      .nav-links,.nav-cta{display:none}
+      .menu-toggle{display:block}
+      .mobile-menu{position:absolute;left:20px;right:20px;top:70px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:10px;display:none}
+      .mobile-menu.open{display:grid}
+      .mobile-menu a{padding:12px 14px;border-radius:10px;font-size:13px;font-weight:700;color:#36516A}
+      .hero-grid,.story-grid,.process,.contact-grid,.distributor-grid{grid-template-columns:1fr}
+      .water-stage{min-height:500px;order:-1}
+      .hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+      .hero-copy .lead{margin-inline:auto}
+      .hero-meta{justify-content:center}
+      .process-intro{position:static}
+      .products{grid-template-columns:1fr 1fr}
+      .trust-grid{grid-template-columns:1fr}
+      .footer-top{flex-direction:column}
+    }
+    @media (max-width:650px){
+      .container{width:min(var(--container),calc(100% - 28px))}
+      .section{padding:82px 0}
+      .display{font-size:42px}
+      .hero-grid{padding:46px 0 70px}
+      .water-stage{min-height:430px}
+      .ripples{width:380px;height:380px}
+      .water-glow{width:290px;height:290px}
+      .bottle-wrap{width:200px}
+      .bottle{height:390px}
+      .bottle-cap{width:64px;height:80px;top:-32px}
+      .bottle-label{top:140px;height:150px}
+      .bottle-label strong{font-size:27px}
+      .hero-ring{display:none}
+      .product-head{display:block}
+      .products{grid-template-columns:1fr}
+      .field-grid{grid-template-columns:1fr}
+      .distributor{padding:34px 24px;border-radius:26px}
+      .footer-links{gap:30px;flex-wrap:wrap}
+      .footer-bottom{flex-direction:column}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-loader" id="loader" aria-hidden="true">
+    <svg class="loader-mark" viewBox="0 0 72 72" role="img" aria-label="Ovia logo">
+      <path d="M36 8C29 20 18 29 18 42a18 18 0 0 0 36 0C54 29 43 20 36 8Z" fill="#6FE4F2"/>
+      <path d="M25 44c3 6 9 9 17 9 6 0 11-2 14-6-4 9-12 15-21 15-10 0-18-8-18-18Z" fill="#fff" opacity=".95"/>
+    </svg>
+  </div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Ovia home">
+        <svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true">
+          <path d="M36 7C28 20 16 30 16 44a20 20 0 0 0 40 0C56 30 44 20 36 7Z" fill="var(--navy)"/>
+          <path d="M24 43c3 6 8 9 15 9 7 0 13-3 17-8-3 10-12 16-21 16-10 0-18-8-18-18 0-2 0-3 .2-4.5 1.8 2.1 3.8 3.8 6.8 5.5Z" fill="var(--aqua)"/>
+        </svg>
+        <span class="brand-name">OVIA</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#quality">Quality</a>
+        <a href="#distribution">Distribution</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Talk to Ovia <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a><a href="#products">Products</a><a href="#quality">Quality</a><a href="#distribution">Distribution</a><a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Pure drinking water</span>
+          <h1 class="display">Pure, simply.<br><span style="color:#1B8398">Ovia.</span></h1>
+          <p class="lead">Clean hydration designed for everyday life — from the family table to the office, the shop shelf and every stop in between.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Explore Ovia <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#distribution">Wholesale & distribution</a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="dot"></i> Premium positioning</span>
+            <span><i class="dot"></i> Everyday formats</span>
+            <span><i class="dot"></i> Built for scale</span>
+          </div>
+        </div>
+
+        <div class="water-stage reveal" aria-label="Animated Ovia water bottle visual">
+          <div class="water-glow"></div>
+          <div class="ripples"></div>
+          <div class="hero-ring" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16738A" stroke-width="1.6"><path d="M12 3s-5 6-5 10a5 5 0 0 0 10 0c0-4-5-10-5-10Z"/></svg>
+          </div>
+          <div class="bottle-wrap">
+            <div class="bottle-cap"></div>
+            <div class="bottle">
+              <div class="bottle-spark"></div>
+              <div class="bottle-label">
+                <svg class="mini-logo" viewBox="0 0 72 72" aria-hidden="true"><path d="M36 7C28 20 16 30 16 44a20 20 0 0 0 40 0C56 30 44 20 36 7Z" fill="#6FE4F2"/><path d="M24 43c3 6 8 9 15 9 7 0 13-3 17-8-3 10-12 16-21 16-10 0-18-8-18-18 0-2 0-3 .2-4.5 1.8 2.1 3.8 3.8 6.8 5.5Z" fill="#fff"/></svg>
+                <strong>OVIA</strong>
+                <small>Pure drinking water</small>
+              </div>
+            </div>
+            <div class="bottle-shadow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 62c190-56 360-59 560-6 260 68 471 72 880-24v88H0Z" fill="#EAFBFD"/></svg>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="about">
+      <div class="container story-grid">
+        <div class="reveal">
+          <span class="eyebrow">About Ovia</span>
+          <h2 class="section-title">A water brand made to feel reassuring.</h2>
+          <p class="lead">Ovia is positioned around one clear idea: make hydration feel clean, dependable and considered. The brand is designed to sit comfortably in modern homes, workplaces and retail environments.</p>
+          <div class="story-points">
+            <div class="point">
+              <div class="point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3s-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12Z"/></svg></div>
+              <div><h4>Pure by design</h4><p>Minimal, calm branding that puts the product and the feeling of clean water first.</p></div>
+            </div>
+            <div class="point">
+              <div class="point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="8"/></svg></div>
+              <div><h4>Made for modern routines</h4><p>Practical formats for everyday hydration, from personal bottles to larger household and office supply.</p></div>
+            </div>
+            <div class="point">
+              <div class="point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+              <div><h4>Built for dependable supply</h4><p>Ovia is structured for households, offices, retailers and distribution partners as the brand grows.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card reveal">
+          <span class="eyebrow">Brand promise</span>
+          <h3>Pure drinking water, presented with intention.</h3>
+          <p>Ovia pairs a crisp visual identity with clear product communication so the brand feels premium without feeling distant.</p>
+          <div style="height:28px"></div>
+          <svg viewBox="0 0 600 320" width="100%" height="auto" role="img" aria-label="Abstract Ovia water landscape">
+            <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAFBFD"/><stop offset="1" stop-color="#D0F2F6"/></linearGradient><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8DE6EF"/><stop offset="1" stop-color="#1A879A"/></linearGradient></defs>
+            <rect width="600" height="320" rx="24" fill="url(#sky)"/>
+            <circle cx="462" cy="72" r="42" fill="#fff" opacity=".72"/>
+            <path d="M0 191c109-25 188-23 297 11 103 31 193 38 303 7v111H0Z" fill="#6EC6D4" opacity=".42"/>
+            <path d="M0 206c128 25 204 13 304-18 102-31 185-36 296 0v132H0Z" fill="url(#sea)"/>
+            <path d="M0 239c92 20 176 21 274-7 111-32 196-25 326 4" fill="none" stroke="#EAFBFD" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+            <path d="M0 261c107 18 198 15 291-9 97-25 191-25 309 1" fill="none" stroke="#EAFBFD" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="product-head reveal">
+          <div><span class="eyebrow">Product range</span><h2 class="section-title">Formats for every routine.</h2></div>
+          <p class="lead">Start with a focused portfolio and expand by channel, occasion and distributor demand.</p>
+        </div>
+        <div class="products">
+          <article class="product-card reveal">
+            <div class="product-visual"><div class="small-bottle"><div class="small-label">OVIA</div></div></div>
+            <div class="product-size">01 · Everyday carry</div><h3>500 ml</h3><p>A compact format for commutes, lunches, events and on-the-go hydration.</p><a class="product-link" href="#contact">Ask about availability <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-visual"><div class="small-bottle large-bottle"><div class="small-label">OVIA</div></div></div>
+            <div class="product-size">02 · Home & office</div><h3>1.5 L</h3><p>A practical larger bottle for shared meals, desks and daily home use.</p><a class="product-link" href="#contact">Ask about availability <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-visual"><div class="jug"><div class="jug-label">OVIA</div></div></div>
+            <div class="product-size">03 · Bulk hydration</div><h3>19 L</h3><p>Designed for refill, dispenser and regular household or workplace supply programs.</p><a class="product-link" href="#distribution">Talk to distribution <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="quality">
+      <div class="container process">
+        <div class="process-intro reveal">
+          <span class="eyebrow">Why Ovia</span>
+          <h2 class="section-title">A clear process inspires confidence.</h2>
+          <p class="lead">The site presents Ovia’s quality story in a simple sequence. Replace or expand these steps with the brand’s verified plant process, certifications and testing information before public launch.</p>
+          <div class="process-note">Launch note: keep quality claims tied to documented procedures and current certifications.</div>
+        </div>
+        <div class="process-list reveal">
+          <div class="process-step"><div class="step-no">01</div><div><h3>Source selection</h3><p>Begin with a controlled source and a clear documentation trail for water handling and supply.</p></div></div>
+          <div class="process-step"><div class="step-no">02</div><div><h3>Filtration & purification</h3><p>Use the brand’s verified filtration and purification stages to prepare water for packaging.</p></div></div>
+          <div class="process-step"><div class="step-no">03</div><div><h3>Quality checks</h3><p>Track the documented checks that matter to safety, consistency and finished-product confidence.</p></div></div>
+          <div class="process-step"><div class="step-no">04</div><div><h3>Sealed & ready</h3><p>Package, label and distribute with clear batch and product information for every channel.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trust-title">
+      <div class="container trust-grid">
+        <div class="quote-card reveal">
+          <div><span class="eyebrow" style="color:#A6EDF3">Brand voice</span><p id="trust-title">“Clean water should feel like a simple decision — dependable, clear and easy to choose.”</p></div>
+          <div class="quote-meta">Ovia brand principle</div>
+        </div>
+        <div class="trust-list reveal">
+          <div class="trust-item"><div class="trust-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 5 6v5c0 5 3.2 8.7 7 10 3.8-1.3 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><strong>Quality-first presentation</strong><span>Clear product information and a calm visual system built around trust.</span></div></div>
+          <div class="trust-item"><div class="trust-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="8"/></svg></div><div><strong>Designed to scale</strong><span>Formats and distribution touchpoints can grow with the business.</span></div></div>
+          <div class="trust-item"><div class="trust-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 4h10v16H7z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><strong>Transparent communication</strong><span>Use the contact flow for orders, supply questions and distributor enquiries.</span></div></div>
+          <p class="trust-disclaimer">Any certifications, laboratory results, source claims or third-party badges should be added only after they are verified for Ovia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="distribution">
+      <div class="container">
+        <div class="distributor reveal">
+          <div class="distributor-grid">
+            <div>
+              <span class="eyebrow">Distributor & bulk orders</span>
+              <h2>Build supply around your business.</h2>
+              <p>Ovia is set up to support retail, offices, hospitality and distributor relationships. Tell us your required formats, approximate volume and delivery area, and the sales team can take it from there.</p>
+              <div class="hero-actions" style="margin-top:24px"><a class="btn" style="background:#6FE4F2;color:#071B33" href="#contact">Request a quote <span aria-hidden="true">→</span></a></div>
+            </div>
+            <div class="contact-chip">
+              <strong>Retail · Office · Hospitality · Distribution</strong>
+              <span>Share your expected monthly volume and preferred bottle formats.</span>
+              <span>Response details can be managed through the contact form below.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Contact Ovia</span>
+          <h2 class="section-title">Let’s talk water, supply and the next order.</h2>
+          <p class="lead">Use the form for product enquiries, retail supply, office requirements or distributor opportunities.</p>
+          <div class="contact-panel" style="margin-top:24px">
+            <h3>Ovia Pure Drinking Water</h3>
+            <p>Serving the Pakistan market with a brand identity designed for modern retail and distribution.</p>
+            <div class="contact-details">
+              <div class="detail"><div class="detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></div><div><strong>Market</strong><span>Pakistan</span></div></div>
+              <div class="detail"><div class="detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16v10H4z"/><path d="m4 8 8 6 8-6"/></svg></div><div><strong>Sales</strong><span>Use the enquiry form for the current sales contact</span></div></div>
+              <div class="detail"><div class="detail-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3.5 12h17M12 3c2.2 2.3 3.4 5.4 3.4 9S14.2 18.7 12 21c-2.2-2.3-3.4-5.4-3.4-9S9.8 5.3 12 3Z"/></svg></div><div><strong>Website</strong><span>oviapurelife.com</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Ovia website enquiry">
+            <input type="hidden" name="from_name" value="Ovia Website">
+            <input type="hidden" name="redirect" value="https://oviapurelife.com/#contact">
+            <div class="field-grid">
+              <div><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
+              <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            </div>
+            <div class="field-grid">
+              <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+92 ..."></div>
+              <div><label for="type">Enquiry type</label><input id="type" name="enquiry_type" type="text" placeholder="Retail, bulk, distributor…"></div>
+            </div>
+            <div><label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell us what you need — bottle size, estimated quantity, location, or any other details."></textarea></div>
+            <div class="form-actions"><button class="btn btn-primary" type="submit">Send enquiry <span aria-hidden="true">→</span></button><p class="form-note">Your enquiry is submitted securely through Web3Forms.</p></div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#home">
+            <svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true"><path d="M36 7C28 20 16 30 16 44a20 20 0 0 0 40 0C56 30 44 20 36 7Z" fill="#6FE4F2"/><path d="M24 43c3 6 8 9 15 9 7 0 13-3 17-8-3 10-12 16-21 16-10 0-18-8-18-18 0-2 0-3 .2-4.5 1.8 2.1 3.8 3.8 6.8 5.5Z" fill="#fff"/></svg>
+            <span class="brand-name">OVIA</span>
+          </a>
+          <p>Pure drinking water with a modern, dependable brand identity.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><strong>Explore</strong><a href="#about">About</a><a href="#products">Products</a><a href="#quality">Quality</a></div>
+          <div class="footer-col"><strong>Business</strong><a href="#distribution">Distribution</a><a href="#contact">Contact</a></div>
+          <div class="footer-col"><strong>Social</strong><a href="#contact">Instagram</a><a href="#contact">Facebook</a><a href="#contact">LinkedIn</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Ovia Pure Drinking Water. All rights reserved.</span><span>oviapurelife.com</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => setTimeout(() => loader.classList.add('hide'), 300));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('in'); observer.unobserve(entry.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin:'-45% 0px -48% 0px',threshold:0});
+    sections.forEach(section => navObserver.observe(section));
+
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.textContent = 'Sending your enquiry…';
+      status.classList.add('show');
+      const formData = new FormData(form);
+      try{
+        const response = await fetch(form.action, {method:'POST', body:formData, headers:{Accept:'application/json'}});
+        const data = await response.json().catch(() => ({}));
+        if(response.ok){
+          status.textContent = 'Thanks — your enquiry has been sent. We’ll get back to you soon.';
+          form.reset();
+        }else{
+          status.textContent = data?.message || 'Something went wrong. Please try again or use your direct sales contact.';
+        }
+      }catch(error){
+        status.textContent = 'Network error. Please try again when you have a stable connection.';
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
