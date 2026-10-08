@@ -34,13 +34,22 @@ async function submitForm(form){
  if(wa)fd.set("international_whatsapp","+"+waCode+" "+wa.replace(/^0/,"").replace(/\D/g,""));
  try{const res=await fetch("https://api.web3forms.com/submit",{method:"POST",body:fd});const data=await res.json();if(data.success){form.reset();document.querySelectorAll(".code-select").forEach(s=>s.value="");document.querySelectorAll(".country-select").forEach(s=>s.value="");showSuccess(form)}else throw new Error(data.message||"Submission failed")}catch(e){alert("We couldn't send the form right now. Please try again.");}finally{btn.disabled=false;btn.innerHTML=original}
 }
-document.addEventListener("DOMContentLoaded",()=>{
- fillCountries();
- const pre=document.getElementById("preloader");if(pre)setTimeout(()=>pre.classList.add("preloader-done"),1650);
- const menu=document.querySelector(".menu-btn"),nav=document.querySelector(".nav");if(menu)menu.addEventListener("click",()=>nav.classList.toggle("open"));
- const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
- document.querySelectorAll("[data-sound]").forEach(x=>x.addEventListener("click",()=>sound(x.dataset.sound)));
- document.querySelectorAll(".stepper button").forEach(b=>b.addEventListener("click",()=>{const input=b.parentElement.querySelector("input");let n=parseInt(input.value||"0");n=b.dataset.plus!==undefined?n+1:Math.max(0,n-1);input.value=n;sound("click")}));
- document.querySelectorAll("form[data-form]").forEach(f=>f.addEventListener("submit",e=>{e.preventDefault();submitForm(f)}));
- const params=new URLSearchParams(location.search);const p=params.get("product");if(p){const map={"500ml":"qty_500ml","1500ml":"qty_1500ml","19l":"qty_19l"};if(map[p]){const i=document.querySelector('[name="'+map[p]+'"]');if(i)i.value=1}}
-});
+function initOvia(){
+  fillCountries();
+  const pre=document.getElementById("preloader");
+  const dismissPreloader=()=>{if(pre){pre.classList.add("preloader-done");setTimeout(()=>{pre.style.display="none"},900)}};
+  if(pre){setTimeout(dismissPreloader,2800);if(document.readyState==="complete")dismissPreloader();else window.addEventListener("load",dismissPreloader,{once:true});}
+  const menu=document.querySelector(".menu-btn"),nav=document.querySelector(".nav");
+  if(menu&&nav)menu.addEventListener("click",()=>{nav.classList.toggle("open");sound("click")});
+  const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.12}):null;
+  document.querySelectorAll(".reveal").forEach(x=>io?io.observe(x):x.classList.add("visible"));
+  document.querySelectorAll("[data-sound]").forEach(x=>x.addEventListener("click",()=>sound(x.dataset.sound)));
+  document.querySelectorAll(".stepper button").forEach(b=>b.addEventListener("click",()=>{
+    const input=b.parentElement.querySelector("input");let n=parseInt(input.value||"0",10);
+    n=b.dataset.plus!==undefined?n+1:Math.max(0,n-1);input.value=n;sound("click");
+  }));
+  document.querySelectorAll("form[data-form]").forEach(f=>f.addEventListener("submit",e=>{e.preventDefault();submitForm(f)}));
+  const params=new URLSearchParams(location.search),p=params.get("product");
+  if(p){const map={"500ml":"qty_500ml","1500ml":"qty_1500ml","19l":"qty_19l"},i=document.querySelector("[name='"+(map[p]||"")+"']");if(i)i.value=1}
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initOvia,{once:true});else initOvia();
