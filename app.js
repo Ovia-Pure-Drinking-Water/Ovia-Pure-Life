@@ -40,7 +40,7 @@ function initOvia(){
   const dismissPreloader=()=>{if(pre){pre.classList.add("preloader-done");setTimeout(()=>{pre.style.display="none"},900)}};
   if(pre){setTimeout(dismissPreloader,2800);if(document.readyState==="complete")dismissPreloader();else window.addEventListener("load",dismissPreloader,{once:true});}
   const menu=document.querySelector(".menu-btn"),nav=document.querySelector(".nav");
-  if(menu&&nav)menu.addEventListener("click",()=>{nav.classList.toggle("open");sound("click")});
+  if(menu&&nav){menu.setAttribute("type","button");menu.setAttribute("aria-controls","primary-navigation");menu.setAttribute("aria-expanded","false");nav.id="primary-navigation";menu.addEventListener("click",()=>{const opened=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(opened));sound("click")});nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}));}
   const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.12}):null;
   document.querySelectorAll(".reveal").forEach(x=>io?io.observe(x):x.classList.add("visible"));
   document.querySelectorAll("[data-sound]").forEach(x=>x.addEventListener("click",()=>sound(x.dataset.sound)));
