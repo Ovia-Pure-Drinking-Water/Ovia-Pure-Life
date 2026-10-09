@@ -42,7 +42,7 @@
 .form-card-head p{font-size:12px;line-height:1.8;color:#718596;margin:0}
 .form-card form{display:grid;gap:18px}
 .form-card label{display:grid;gap:8px;font-size:11px;font-weight:800;color:#557087}
-.form-card input,.form-card select,.form-card textarea{width:100%;min-width:0;border:1px solid #d6e2e8;background:#fbfdfe;border-radius:12px;padding:14px 14px;color:#102a43;outline:none;transition:border-color .25s,box-shadow .25s;font-size:13px}
+.form-card input,.form-card select,.form-card textarea{width:100%;min-width:0;position:relative;z-index:2;pointer-events:auto;border:1px solid #d6e2e8;background:#fbfdfe;border-radius:12px;padding:14px 14px;color:#102a43;outline:none;transition:border-color .25s,box-shadow .25s;font-size:13px}.form-card select{display:block;min-height:47px;appearance:auto;-webkit-appearance:menulist;cursor:pointer;color-scheme:light}.form-card select option{background:#fff;color:#102a43}
 .form-card input:focus,.form-card select:focus,.form-card textarea:focus{border-color:#61cfdf;box-shadow:0 0 0 4px rgba(111,228,242,.12)}
 .form-card textarea{resize:vertical;min-height:150px}
 .form-card .phone-row{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:13px}
@@ -86,8 +86,8 @@
 <input type="checkbox" name="botcheck" style="display:none">
 <label>Full name<input required name="name" autocomplete="name" placeholder="Your name"></label>
 <label>Email address<input required type="email" name="email" autocomplete="email" placeholder="name@example.com"></label>
-<label>Country<select required name="country" class="country-select" autocomplete="country-name"></select></label>
-<div class="phone-row"><label>Phone code<select required name="phone_code" class="code-select" autocomplete="tel-country-code"></select></label><label>Phone number<input required name="phone" inputmode="tel" autocomplete="tel-national" placeholder="3001234567"></label></div>
+<label>Country<select required name="country" class="country-select" aria-label="Select your country"><option value="">Loading countries…</option></select></label>
+<div class="phone-row"><label>Country code<select required name="phone_code" class="code-select" aria-label="Select your country calling code"><option value="">Loading country codes…</option></select></label><label>Phone number<input required name="phone" inputmode="tel" autocomplete="tel-national" placeholder="3001234567"></label></div>
 <label>Enquiry type<select required name="inquiry_type"><option value="">Select an option</option><option>General question</option><option>Availability</option><option>Partnership</option><option>Feedback</option><option>Media / press</option><option>Other</option></select></label>
 <label>Message<textarea required name="message" rows="6" placeholder="Tell us what you need..."></textarea></label>
 <button class="btn btn-primary submit-btn" type="submit">Send enquiry <span>↗</span></button>
@@ -102,6 +102,6 @@
 <small>© 2026 Ovia Pure Drinking Water</small>
 </footer>
 <div id="success-modal"></div>
-<script src="app.js?v=20261009-menu4"></script>
+<script src="app.js?v=20261009-menu5"></script>
 </body>
 </html>
