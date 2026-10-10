@@ -20,7 +20,7 @@ function sound(type="click"){
 function showSuccess(form){
  const modal=document.getElementById("success-modal"); sound("success"); if(!modal)return;
  const kind=form.dataset.form==="order"?"Your order enquiry is submitted.":form.dataset.form==="report"?"Your report is submitted.":"Your enquiry is submitted.";
- modal.innerHTML='<div class="success-card"><div class="success-art"><div class="person"></div><div class="head"></div><div class="arm"></div><div class="thumb"></div><div class="check">✓</div></div><h2>You're all set.</h2><p>'+kind+'<br>Ovia has received it and the team can review the details.</p><button class="btn btn-primary" onclick="document.getElementById(\'success-modal\').classList.remove(\'show\')">Done <span>✓</span></button></div>';
+ modal.innerHTML='<div class="success-card"><div class="success-art"><div class="person"></div><div class="head"></div><div class="arm"></div><div class="thumb"></div><div class="check">✓</div></div><h2>You are all set.</h2><p>'+kind+'<br>Ovia has received it and the team can review the details.</p><button class="btn btn-primary" onclick="document.getElementById(\'success-modal\').classList.remove(\'show\')">Done <span>✓</span></button></div>';
  modal.classList.add("show");
 }
 async function submitForm(form){
