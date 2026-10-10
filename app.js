@@ -18,10 +18,10 @@ function sound(type="click"){
  else{o.type="triangle";o.frequency.setValueAtTime(700,now);o.frequency.exponentialRampToValueAtTime(1050,now+.06);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.035,now+.008);g.gain.exponentialRampToValueAtTime(.0001,now+.09);o.start(now);o.stop(now+.1)}}catch(e){}
 }
 function showSuccess(form){
- const modal=document.getElementById("success-modal"); if(!modal)return;
+ const modal=document.getElementById("success-modal"); sound("success"); if(!modal)return;
  const kind=form.dataset.form==="order"?"Your order enquiry is submitted.":form.dataset.form==="report"?"Your report is submitted.":"Your enquiry is submitted.";
  modal.innerHTML='<div class="success-card"><div class="success-art"><div class="person"></div><div class="head"></div><div class="arm"></div><div class="thumb"></div><div class="check">✓</div></div><h2>You're all set.</h2><p>'+kind+'<br>Ovia has received it and the team can review the details.</p><button class="btn btn-primary" onclick="document.getElementById(\'success-modal\').classList.remove(\'show\')">Done <span>✓</span></button></div>';
- modal.classList.add("show");sound("success");
+ modal.classList.add("show");
 }
 async function submitForm(form){
  const btn=form.querySelector(".submit-btn"), original=btn.innerHTML;btn.disabled=true;btn.innerHTML='Sending <span>◌</span>';
